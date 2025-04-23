@@ -37,3 +37,17 @@ class IncorrectDegreeException(Exception):
         self.degree = degree
         self.message = f'Ошибка: указанное число ({degree}) не является натуральной степенью 10.'
         super().__init__(self.message)
+        
+        
+class ConvertNegativeToNaturalException(Exception):
+    """
+    Исключение, вызываемое при попытке преобразовать отрицательное число в натуральное.
+    
+    Attributes:
+        message (str): Сообщение об ошибке
+    """
+    
+    def __init__(self, integer):
+        self.integer = integer
+        self.message = f'Ошибка: число ({integer}) отрицательное.'
+        super().__init__(self.message)
