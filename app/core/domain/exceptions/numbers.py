@@ -51,3 +51,17 @@ class ConvertNegativeToNaturalException(Exception):
         self.integer = integer
         self.message = f'Ошибка: число ({integer}) отрицательное.'
         super().__init__(self.message)
+    
+
+class RationalIsNotIntegerException(Exception):
+    """
+    Исключение, вызываемое при попытке преобразовать рациональную дробь, не являющуюся целым числом, в целое число.
+    
+    Attributes:
+        message (str): Сообщение об ошибке
+    """
+    
+    def __init__(self, ratio):
+        self.ratio = ratio
+        self.message = f'Ошибка: дробь ({ratio}) не является целым числом.'
+        super().__init__(self.message)
